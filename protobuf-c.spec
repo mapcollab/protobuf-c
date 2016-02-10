@@ -1,15 +1,16 @@
 Name:           protobuf-c
-Version:        1.0.2
-Release:        2%{?dist}
+Version:        1.2.1
+Release:        1%{?dist}
 Summary:        C bindings for Google's Protocol Buffers
 
 
 Group:          System Environment/Libraries
 License:        BSD
 URL:            https://github.com/protobuf-c/protobuf-c
-Source0:        https://github.com/protobuf-c/protobuf-c/releases/download/v%{version}/%{name}-%{version}.tar.gz
+Source0:        %{name}-%{version}.tar.gz
 
 BuildRequires:  protobuf-devel
+BuildRequires:  protobuf-compiler
 
 %description
 Protocol Buffers are a way of encoding structured data in an efficient yet
@@ -38,6 +39,7 @@ This package contains protobuf-c headers and libraries.
 %setup -q
 
 %build
+./autogen.sh
 %configure --disable-static
 # disabled parallel build due to https://github.com/protobuf-c/protobuf-c/issues/156
 make
