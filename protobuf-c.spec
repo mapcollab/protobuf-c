@@ -71,6 +71,9 @@ rm -f $RPM_BUILD_ROOT/%{_libdir}/libprotobuf-c.la
 %{_libdir}/pkgconfig/libprotobuf-c.pc
 
 %changelog
+* Wed Feb 10 2016 Tomasz Rostanski <tomasz.rostanski@thalesgroup.com> 1.2.1-1
+- Initial build 
+
 * Mon Aug 17 2015 Adrian Reber <areber@redhat.com> - 1.0.2-2
 - remove 'ExcludeArch' hack
 
